@@ -1,0 +1,20 @@
+h1{
+    color: rgb(207, 187, 187);
+    padding: 1em;
+    font-family:   Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .list-group-item{
+      margin-left: 0.5em;
+  }
+
+
+

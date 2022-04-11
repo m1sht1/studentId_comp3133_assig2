@@ -1,0 +1,46 @@
+
+<div fxFlexFill>
+    <mat-card fxFlex = "50">
+        <mat-toolbar color="primary"  style="border-radius: 3px;">Sign Up</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" style="margin-top: 10px;" >
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Username" [formControl]="UserNameControl">
+                <mat-error *ngIf="UserNameControl.invalid">{{getErrorMessage_1()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="First Name" [formControl]="FirstNameControl">
+                <mat-error *ngIf="FirstNameControl.invalid">{{getErrorMessage_2()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Last Name" [formControl]="LastNameControl">
+                <mat-error *ngIf="LastNameControl.invalid">{{getErrorMessage_3()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="E mail" [formControl]="EmailControl">
+                <mat-error *ngIf="EmailControl.invalid">{{getErrorMessage_4()}}</mat-error>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <input type="password" matInput placeholder="Password" [formControl]="PasswordControl">
+                <mat-error *ngIf="PasswordControl.invalid">{{getErrorMessage_5()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="password" matInput placeholder="Conform Password" [formControl]="ConformPasswordControl">
+                <mat-error *ngIf="ConformPasswordControl.invalid">{{getErrorMessage_6()}}</mat-error>
+            </mat-form-field>
+
+            <mat-radio-group aria-label="Select an option" style="padding-top: 5px;padding-bottom: 5px;" [formControl]="TypeControl">
+                <mat-radio-button value="admin">Admin</mat-radio-button>
+                <mat-radio-button value="customer">Customer</mat-radio-button>
+              </mat-radio-group>
+            
+            
+            <button mat-raised-button color="primary" (click)="signup()">Sign Up</button>
+        </form>
+    </mat-card>
+</div>

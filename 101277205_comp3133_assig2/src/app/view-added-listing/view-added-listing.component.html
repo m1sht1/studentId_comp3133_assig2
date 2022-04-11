@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Added Listings</h1>
+    
+    <div *ngFor="let listing of listings" class="listItem">
+<mat-card>
+  <mat-card-subtitle>Listing ID:  {{ listing.listing_id }}</mat-card-subtitle>
+         
+         City : {{ listing.city }}
+        </mat-card>
+    </div>
+</div>
+    

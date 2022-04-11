@@ -1,0 +1,47 @@
+
+<div class="containers">
+   
+        <p > 
+            <mat-toolbar color="primary">
+              <span>Booking</span>
+              <span class="example-spacer"></span>
+              <button *ngIf="!isLogged.value" mat-flat-button color="primary" (click)="SignUp()">Signup</button>
+              <button *ngIf="!isLogged.value" mat-flat-button color="primary" (click)="Login()">Login</button>
+              <button *ngIf="isLogged.value" mat-flat-button color="primary" (click)="Logout()">Logout</button>
+            </mat-toolbar>
+          </p>
+          
+
+    <div class="row">
+  
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-8" >
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-3">
+      <div class="list-group" >
+        <div>
+          <a routerLink="/" class="list-group-item list-group-item-action" style="color: blueviolet; font-weight: 700;">Home</a>
+        </div>
+        <div *ngIf="this.userRole === 'customer' || this.userRole === 'guest'; else noneDiv"> 
+          <a routerLink="/booked_listing" class="list-group-item list-group-item-action" style="color: blueviolet; font-weight: 700;" >Booked Listings</a>
+        </div>
+        <div *ngIf="this.userRole === 'admin' else noneDiv">
+          <a routerLink="/addnew_listing" class="list-group-item list-group-item-action" style="color: blueviolet; font-weight: 700;">Add New Listing</a>
+        </div>
+        <div *ngIf="this.userRole === 'admin' else noneDiv">
+          <a routerLink="/viewAdded_listing" class="list-group-item list-group-item-action" style="color: blueviolet; font-weight: 700;">View Added Listing</a>
+        </div>
+        <ng-template #noneDiv>
+          <div></div>
+        </ng-template>
+      </div>
+    </div>
+    </div>
+  
+  
+  
+  
+  </div>

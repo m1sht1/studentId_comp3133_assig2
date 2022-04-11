@@ -1,0 +1,19 @@
+<div fxFlexFill>
+    <mat-card fxFlex = "50">
+        <mat-toolbar color="primary" style="border-radius: 3px;">Login</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" style="margin-top: 10px;" >
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Username" [formControl]="UserNameControl">
+                <mat-error *ngIf="UserNameControl.invalid">{{getErrorMessage_1()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="password" matInput placeholder="Password"  [formControl]="PasswordControl">
+                <mat-error *ngIf="PasswordControl.invalid">{{getErrorMessage_2()}}</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="login()">Login</button>
+        </form>
+    </mat-card>
+</div>

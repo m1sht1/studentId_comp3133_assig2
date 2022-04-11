@@ -1,0 +1,44 @@
+
+<div fxFlexFill>
+    <mat-card fxFlex = "50">
+        <mat-toolbar color="primary"  style="border-radius: 3px;">Add New Listing</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" style="margin-top: 10px;" >
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Listing Id" [formControl]="ListingIdControl">
+                <mat-error *ngIf="ListingIdControl.invalid">{{getErrorMessage_1()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Listing Title" [formControl]="ListingTitleControl">
+                <mat-error *ngIf="ListingTitleControl.invalid">{{getErrorMessage_2()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Description" [formControl]="DescriptionControl">
+                <mat-error *ngIf="DescriptionControl.invalid">{{getErrorMessage_3()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Street" [formControl]="StreetControl">
+                <mat-error *ngIf="StreetControl.invalid">{{getErrorMessage_4()}}</mat-error>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="City" [formControl]="CityControl">
+                <mat-error *ngIf="CityControl.invalid">{{getErrorMessage_5()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Postal Code" [formControl]="PostalCodeControl">
+                <mat-error *ngIf="PostalCodeControl.invalid">{{getErrorMessage_6()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Price" [formControl]="PriceControl">
+                <mat-error *ngIf="PriceControl.invalid">{{getErrorMessage_7()}}</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="addListing()">Add Listing</button>
+        </form>
+    </mat-card>
+</div>

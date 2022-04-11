@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Booked Listings</h1>
+    
+    <div>
+    </div>
+    <div *ngIf="listings; else showMessage">
+    </div>
+    <div *ngFor="let listing of listings" >
+      <mat-card class="example-card" style="margin: 10px; background-color:rgba(245, 247, 250, 0.993);color: rgb(74, 43, 248);">
+        <mat-card-subtitle> {{ listing.listing_title }}</mat-card-subtitle>
+        <mat-card-title>{{ listing.listing_title }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ listing.description }}</p>
+          <p>Date : {{ listing.booking_date }}</p>
+          <p>Booking Start Date : {{ listing.booking_start }}</p>
+          <p>Booking End Date : {{ listing.booking_end }}</p>
+          <p>Listing Id : {{ listing.listing_id }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <ng-template #showMessage style="text-align: center;">
+      <!-- <p style="color: aliceblue; font-size: 30px;">Please Log in as Customer</p> -->
+    </ng-template>
+    </div>
+    
